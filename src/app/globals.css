@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer base {
+    section {
+        @apply flex gap-8;
+    }
+    label {
+        @apply flex flex-col gap-1 w-full items-start justify-between;
+    }
+    label > span:first-child {
+        @apply text-sm inline-block text-slate-100;
+    }
+    label > span:last-child {
+        @apply h-12 px-2 inline-block text-black text-right grow-0 rounded-md bg-gray-300;
+    }
+    .loading #customCard-container {
+        visibility: hidden;
+    }
+}
