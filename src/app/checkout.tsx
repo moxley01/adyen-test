@@ -148,7 +148,7 @@ const Checkout = ({
             </g>
           </svg>
           {`Pay ${getSymbolFromCurrency(session.amount.currency)}${
-            session.amount.value
+            session.amount.value / 100
           }`}
         </button>
       </div>
